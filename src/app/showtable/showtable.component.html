@@ -1,0 +1,25 @@
+<!-- id, SepalLenght, SepalWidth, PetalLenght, PetalWidth, Species -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">id</th>
+      <th scope="col">SepalLenght</th>
+      <th scope="col">SepalWidth</th>
+      <th scope="col">PetalLenght</th>
+      <th scope="col">PetalWidth</th>
+      <th scope="col">Species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let irisDTO of irisDTOs; index as i" [ngStyle]="{'background-color': irisDTO.sepalLength < averageSepalLength ? 'red' : 'green' }">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ irisDTO.id }}</td>
+      <td>{{ irisDTO.sepalLength }}</td>
+      <td>{{ irisDTO.sepalWidth }}</td>
+      <td>{{ irisDTO.petalLength }}</td>
+      <td>{{ irisDTO.petalWidth }}</td>
+      <td>{{ irisDTO.species }}</td>
+    </tr>
+  </tbody>
+</table>
